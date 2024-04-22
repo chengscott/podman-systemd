@@ -1,0 +1,14 @@
+[Container]
+ContainerName=git-db
+Pod=git.pod
+AddCapability=sys_nice
+Secret=git-db-root-pwd,type=env,target=MYSQL_ROOT_PASSWORD
+Secret=git-db-user,type=env,target=MYSQL_USER
+Secret=git-db-pwd,type=env,target=MYSQL_PASSWORD
+Environment=MYSQL_DATABASE=gitea
+Volume=/mnt/local/www/git/db-vol:/var/lib/mysql
+AutoUpdate=registry
+Image=docker.io/mysql:8
+
+[Install]
+WantedBy=default.target

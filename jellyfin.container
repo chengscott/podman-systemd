@@ -1,0 +1,14 @@
+[Container]
+ContainerName=jellyfin
+PublishPort=127.0.0.1:8096:8096
+Environment=JELLYFIN_PublishedServerUrl=https://jellyfin.local
+Volume=/mnt/local/www/jellyfin/config:/config
+Volume=/mnt/local/www/jellyfin/cache:/cache
+Volume=/mnt/local/www/jellyfin/font:/font
+Volume=/mnt/nfs/Movie:/media/Movie:ro
+Volume=/etc/resolv.conf:/etc/resolv.conf:ro
+AutoUpdate=registry
+Image=docker.io/jellyfin/jellyfin
+
+[Install]
+WantedBy=default.target

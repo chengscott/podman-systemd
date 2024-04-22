@@ -1,0 +1,9 @@
+[Pod]
+PodName=git
+PublishPort=127.0.0.1:8080:3000
+PublishPort=0.0.0.0:2200:2200
+PodmanArgs=--userns=keep-id
+PodmanArgs=--dns=127.0.0.1
+
+[Install]
+WantedBy=default.target

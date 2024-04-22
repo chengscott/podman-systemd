@@ -1,0 +1,16 @@
+[Unit]
+After=git-db.service
+
+[Container]
+ContainerName=git-web
+Pod=git.pod
+Volume=/mnt/local/www/git/web-vol/config:/etc/gitea
+Volume=/mnt/local/www/git/web-vol/data:/var/lib/gitea
+Volume=/etc/resolv.conf:/etc/resolv.conf:ro
+#User=1001
+#Group=1001
+AutoUpdate=registry
+Image=docker.io/gitea/gitea:latest-rootless
+
+[Install]
+WantedBy=default.target

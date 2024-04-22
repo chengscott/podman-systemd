@@ -1,0 +1,13 @@
+[Unit]
+After=rustdesk-relay.service
+
+[Container]
+ContainerName=rustdesk-server
+Pod=rustdesk.pod
+Volume=/mnt/local/www/rustdesk:/root
+AutoUpdate=registry
+Image=docker.io/rustdesk/rustdesk-server
+Exec=hbbs
+
+[Install]
+WantedBy=default.target
