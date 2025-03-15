@@ -7,8 +7,7 @@ Pod=git.pod
 Volume=/mnt/local/www/git/web-vol/config:/etc/gitea
 Volume=/mnt/local/www/git/web-vol/data:/var/lib/gitea
 Volume=/etc/resolv.conf:/etc/resolv.conf:ro
-#User=1001
-#Group=1001
+HealthCmd="CMD-SHELL curl -so /dev/null http://127.0.0.1:3000/api/healthz || exit 1"
 AutoUpdate=registry
 Image=docker.io/gitea/gitea:latest-rootless
 

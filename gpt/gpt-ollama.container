@@ -1,0 +1,13 @@
+[Container]
+ContainerName=gpt-ollama
+Pod=gpt.pod
+PodmanArgs=--gpus 0
+#Environment=CUDA_MPS_PIPE_DIRECTORY=/tmp/nvidia-mps CUDA_MPS_LOG_DIRECTORY=/tmp/nvidia-log
+#Volume=/tmp/nvidia-mps-%u:/tmp/nvidia-mps
+#Volume=/tmp/nvidia-log-%u:/tmp/nvidia-log
+Volume=/mnt/local/www/gpt/ollama:/root/.ollama
+AutoUpdate=registry
+Image=docker.io/ollama/ollama
+
+[Install]
+WantedBy=default.target

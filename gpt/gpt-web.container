@@ -1,0 +1,14 @@
+[Container]
+ContainerName=gpt-web
+Pod=gpt.pod
+PodmanArgs=--gpus 0
+EnvironmentFile=gpt-web.env
+#Environment=CUDA_MPS_PIPE_DIRECTORY=/tmp/nvidia-mps CUDA_MPS_LOG_DIRECTORY=/tmp/nvidia-log
+#Volume=/tmp/nvidia-mps-%u:/tmp/nvidia-mps
+#Volume=/tmp/nvidia-log-%u:/tmp/nvidia-log
+Volume=/mnt/local/www/gpt/web-vol:/app/backend/data
+AutoUpdate=registry
+Image=ghcr.io/open-webui/open-webui:cuda
+
+[Install]
+WantedBy=default.target

@@ -1,8 +1,0 @@
-[Pod]
-PodName=rustdesk
-PublishPort=21115-21119:21115-21119
-PublishPort=21116:21116/udp
-PodmanArgs=--dns=127.0.0.1
-
-[Install]
-WantedBy=default.target
